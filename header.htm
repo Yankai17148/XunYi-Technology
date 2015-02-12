@@ -1,0 +1,134 @@
+<!--[if lt IE 8]>
+  <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>您在使用过时的浏览器</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>为了您获得更好的体验，请升级您的浏览器(见右侧列表)!</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com.cn' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://windows.microsoft.com/en-us/internet-explorer/download-ie/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='float: left;'><a href='http://www.google.cn/intl/zh-CN/chrome/browser/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+  </div>
+<![endif]-->
+<!--[if lt IE9]>
+<script src="{#$QISHI.site_template#}js/jquery.html5.js" type='text/javascript' ></script>
+<![endif]-->
+<!--[if (gte IE 6)&(lte IE 8)]>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.ltuser').find('.img:nth-child(4n+4)').css({'margin-right':'0'});
+        });
+    </script>
+<![endif]-->
+<div id="header">
+	<div class="clearfix" id="nav-wrapper">
+		<div style="width:100%;max-width:980px;height:76px;margin:auto">
+			<div id="logo">
+				<a href="{#$QISHI.site_dir#}"><img src="{#$QISHI.upfiles_dir#}{#$QISHI.web_logo#}" alt="{#$QISHI.site_name#}" /></a>
+			</div>
+			<div id="nav">
+				<ul class="clearfix">
+					<li><a class="home" href="{#$QISHI.site_dir#}">首页</a></li>
+					<li class="more">
+						<a class="tabs" href="javascript:void(0);">产品中心<span class="arrow"></span></a>
+						<div id="nav-sub-Productcenter" class="sub-nav" style="display: none;">
+							<dl class="clearfix">
+								<div class="dds clearfix">
+									<a href="">骑士猎头系统</a>
+									<a href="">定制与开发</a>	
+									<a href="">产品动态</a>
+									<a href="">业内评测</a>
+									<a href="">客户案例</a>
+								</div>
+							</dl>
+						</div>
+					</li>
+					<li><a class="tabs" href="{#$QISHI.site_dir#}/jobs">带你体验</a></li>
+					<li class="more">
+						<a class="tabs" href="javascript:void(0);">产品授权<span class="arrow"></span></a>
+						<div id="nav-sub-Productcenter" class="sub-nav" style="display: none;">
+							<dl class="clearfix">
+								<div class="dds clearfix">
+									<a href="">付款方式</a>
+									<a href="">授权查询</a>
+								</div>
+							</dl>
+						</div>
+					</li>
+					<li><a class="tabs" href="javascript:void(0);">产品论坛</a></li>
+					<li><a class="tabs" href="javascript:void(0);">骑士官网</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	(function($){
+		var timer;
+		$.fn.mapNav = function(options) {
+			var opts = $.extend({},$.fn.mapNav.defaults,options);
+				$('.more').hover(function(event){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").css("display","block").animate({opacity:1},200);
+				},function(){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").animate({opacity:0},200).css("display","none");
+				}
+			);
+		};
+		$.fn.mapNav.defaults = {};
+	})(jQuery)
+	$('#nav').mapNav();
+	var nav_li = $("#nav ul>li");
+	var current_page = null;
+	var nav_blur_action = function(me){
+	        me.addClass("nav_selected_li");
+	        me.find(">a").addClass("nav_selected_a");
+	        me.find(">a .arrow").addClass("nav_selected_arrow");
+	    };
+
+	    var nav_fadeout_action = function(){
+	        nav_li.removeClass("nav_selected_li");
+	        nav_li.find(">a").removeClass("nav_selected_a");
+	        nav_li.find(">a .arrow").removeClass("nav_selected_arrow");
+	    };
+
+	var nav_hover = function(){
+	    nav_li.hover(function(){
+	            var me = $(this);
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	            nav_blur_action(me);
+	        },function(){
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	    });
+	};
+	nav_hover();
+</script>
+
+
+
+
+<!-- <div id="LT_header" class="clearfix">
+	<div id="LT_nav">
+		<div class="logo">
+			<a href="{#$QISHI.site_dir#}"><img src="{#$QISHI.upfiles_dir#}{#$QISHI.web_logo#}" alt="{#$QISHI.site_name#}" /></a>
+		</div>
+		<div class="nav_itmes">
+			<ul>
+				<li class="LT-item LT-first LT-current"><a class="LT-bg" hidefocus="true" href="javascript:;">首页</a></li>
+				<li class="LT-item"><a class="LT-bg" hidefocus="true" href="javascript:;">产品中心</a></li>
+				<li class="LT-item"><a class="LT-bg" hidefocus="true" href="javascript:;">带你体验</a></li>
+				<li class="LT-item"><a class="LT-bg" hidefocus="true" href="javascript:;">产品授权</a></li>
+				<li class="LT-item"><a class="LT-bg" hidefocus="true" href="javascript:;">产品论坛</a></li>
+				<li class="LT-item"><a class="LT-bg" hidefocus="true" href="javascript:;">骑士官网</a></li>
+			</ul>
+		</div>
+	</div>
+</div> -->

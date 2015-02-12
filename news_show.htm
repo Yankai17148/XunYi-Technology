@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="renderer" content="webkit" /> 
+	<title>新闻详情</title>
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/news.css" />
+	<script src="js/jquery.js"></script>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="header">
+	<div class="clearfix" id="nav-wrapper">
+		<div style="width:980px;height:76px;margin:0 auto">
+			<div id="logo">
+				<a href="{#$QISHI.site_dir#}"><img src="images/logo.gif" alt="{#$QISHI.site_name#}" /></a>
+			</div>
+			<div id="nav">
+				<ul class="clearfix">
+					<li><a class="home" href="{#$QISHI.site_dir#}">首页</a></li>
+					<li class="more">
+						<a class="tabs" href="javascript:void(0);">产品<span class="arrow"></span></a>
+						<div id="nav-sub-Productcenter" class="sub-nav" style="display: none;">
+							<dl class="clearfix">
+								<div class="dds clearfix">
+									<a href="">骑士猎头系统</a>
+									<a href="">定制与开发</a>	
+									<a href="">产品动态</a>
+									<a href="">业内评测</a>
+									<a href="">客户案例</a>
+								</div>
+							</dl>
+						</div>
+					</li>
+					<li><a class="tabs" href="{#$QISHI.site_dir#}/jobs">新闻</a></li>
+					<li><a class="tabs" href="javascript:void(0);">关于</a></li>
+					<li><a class="tabs" href="javascript:void(0);">案例</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	(function($){
+		var timer;
+		$.fn.mapNav = function(options) {
+			var opts = $.extend({},$.fn.mapNav.defaults,options);
+				$('.more').hover(function(event){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").css("display","block").animate({opacity:1},200);
+				},function(){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").animate({opacity:0},200).css("display","none");
+				}
+			);
+		};
+		$.fn.mapNav.defaults = {};
+	})(jQuery)
+	$('#nav').mapNav();
+	var nav_li = $("#nav ul>li");
+	var current_page = null;
+	var nav_blur_action = function(me){
+	        me.addClass("nav_selected_li");
+	        me.find(">a").addClass("nav_selected_a");
+	        me.find(">a .arrow").addClass("nav_selected_arrow");
+	    };
+
+	    var nav_fadeout_action = function(){
+	        nav_li.removeClass("nav_selected_li");
+	        nav_li.find(">a").removeClass("nav_selected_a");
+	        nav_li.find(">a .arrow").removeClass("nav_selected_arrow");
+	    };
+
+	var nav_hover = function(){
+	    nav_li.hover(function(){
+	            var me = $(this);
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	            nav_blur_action(me);
+	        },function(){
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	    });
+	};
+	nav_hover();
+</script>
+
+<!-- banner -->
+<div id="banner">
+	<div class="banner_box"></div>
+</div>
+<!-- banner end -->
+
+<div id="news_show_wrap">
+	<div class="news_show_topbox">
+		<div class="title">
+			<h1>热烈庆祝骑士猎头开始公测！</h1>
+			<div class="date_share">
+				<span>2014-12-20 08:25:43</span>
+				分享新闻到：<a href="" class="share_btn sina" title="新浪微博"></a><a href="" class="share_btn weibo" title="腾讯微博"></a>
+			</div>
+		</div>
+		<div class="news_nav">
+			<a href="" class="news_control left"></a>
+			<a href=""class="news_list_control">全部新闻</a>
+			<a href="" class="news_control right"></a>
+		</div>
+	</div>
+	<div class="news_detail_content">
+		<p><img src="./images/news_img.jpg" alt="" /></p>
+		<p>
+			社交分享是App的必备功能，使得App成为一个非封闭式、非集中的、可以和任何人交流的工具。 超过80%的游戏玩家有强烈的社交需求，就目前来看，大家对游戏内的社交分享还不够重视。游戏玩家的年龄在19-30岁之间居多，90后玩家活跃最高，这批年轻的一代平均每人有3个以上的社交账号。玩家之间的交流互动，可以提高玩家的黏着、活跃、付费转化等，一款优秀的游戏必须有社交元素，事实证明，微信游戏的成功就是一个最好的例子。
+		</p>
+		<p>
+			ShareSDK是Mob.com旗下的社会化分享服务平台，为超过12万款App提供了社交分享功能，诸如滴滴打车、捕鱼达人、凤凰视频等知名应用。自2014年6月，ShareSDK转型成为Mob移动开发者服务平台后，顺势推出了基于社交分享的新产品——ShareREC手游录像分享SDK，并于12月正式公开下载。目前Mob官网已有iOS和Android版本的SDK可供下载，自开放下载不到半个月的时间内已有3000多的下载量。
+		</p>
+		<p>游戏玩家在玩游戏的时候，可以边玩边录，然后将录制好的视频转发给好友观看，玩家还可以对视频进行编辑，录制一段音频或者视频解说，听起来很酷。</p>
+		<p>这次Mob强势推出的手游录像分享组件ShareREC，手游开发者内置该组件，游戏便有自带的录制视频并分享功能，相当于在ShareSDK图文分享基础上的升级。</p>
+		<p>手游视频录像是目前赤手可热的领域，从 YC 走出来的创业团队Kamcord做的就是移动游戏录制及分享。Kamcord 最近由日本游戏公司GungHo领投B轮1500万美元，其他主要投资者还包括腾讯以及《坦克世界》(World of Tanks)的Wargaming等多家公司。而同样由Applifier出品 的Everyplay也被Unity全资收购，一定程度上反映了手游录制及分享的价值。</p>
+		<p>前两个月，国内其他同类产品相继出现，如游视秀、爱拍。 与他们两家的方向不同，游视秀和爱拍构建了玩家视频社区，解决问题是玩家通过录制软件来上传视频，而Mob推出的ShareREC主要服务于手游开发者，意在帮助他们提升游戏体验。Mob联合创始人兼CMO兰旭表示，   虽然游视秀和爱拍都推出了录像SDK,但ShareREC是唯一公开下载使用的产品，是真正意义上与游戏深度结合的SDK,这个技术门槛还是相当高的。同时，他表示，ShareREC并不是简单复制国外的模式，而是在ShareSDK的基础上，帮助游戏把社交分享做到极致。</p>
+		<p><img src="./images/news_img.jpg" alt="" /></p>
+		<p>社交分享是App的必备功能，使得App成为一个非封闭式、非集中的、可以和任何人交流的工具。 超过80%的游戏玩家有强烈的社交需求，就目前来看，大家对游戏内的社交分享还不够重视。游戏玩家的年龄在19-30岁之间居多，90后玩家活跃最高，这批年轻的一代平均每人有3个以上的社交账号。玩家之间的交流互动，可以提高玩家的黏着、活跃、付费转化等，一款优秀的游戏必须有社交元素，事实证明，微信游戏的成功就是一个最好的例子。</p>
+		<p>ShareSDK是Mob.com旗下的社会化分享服务平台，为超过12万款App提供了社交分享功能，诸如滴滴打车、捕鱼达人、凤凰视频等知名应用。自2014年6月，ShareSDK转型成为Mob移动开发者服务平台后，顺势推出了基于社交分享的新产品——ShareREC手游录像分享SDK，并于12月正式公开下载。目前Mob官网已有iOS和Android版本的SDK可供下载，自开放下载不到半个月的时间内已有3000多的下载量。</p>
+		<p>游戏玩家在玩游戏的时候，可以边玩边录，然后将录制好的视频转发给好友观看，玩家还可以对视频进行编辑，录制一段音频或者视频解说，听起来很酷。</p>
+		<p>这次Mob强势推出的手游录像分享组件ShareREC，手游开发者内置该组件，游戏便有自带的录制视频并分享功能，相当于在ShareSDK图文分享基础上的升级。</p>
+		<p>手游视频录像是目前赤手可热的领域，从 YC 走出来的创业团队Kamcord做的就是移动游戏录制及分享。Kamcord 最近由日本游戏公司GungHo领投B轮1500万美元，其他主要投资者还包括腾讯以及《坦克世界》(World of Tanks)的Wargaming等多家公司。而同样由Applifier出品 的Everyplay也被Unity全资收购，一定程度上反映了手游录制及分享的价值。c</p>
+		<p>前两个月，国内其他同类产品相继出现，如游视秀、爱拍。 与他们两家的方向不同，游视秀和爱拍构建了玩家视频社区，解决问题是玩家通过录制软件来上传视频，而Mob推出的ShareREC主要服务于手游开发者，意在帮助他们提升游戏体验。Mob联合创始人兼CMO兰旭表示，   虽然游视秀和爱拍都推出了录像SDK,但ShareREC是唯一公开下载使用的产品，是真正意义上与游戏深度结合的SDK,这个技术门槛还是相当高的。同时，他表示，ShareREC并不是简单复制国外的模式，而是在ShareSDK的基础上，帮助游戏把社交分享做到极致。</p>
+		<p>根据ShareSDK的数据统计，分享出去的链接回流率可以高达百分之700多，而且每个被分享出去的视频，好友观看的同时可以直接下载游戏，转化率最高可以达到20%，这从根本上解决了游戏推广单个用户成本高的问题。</p>
+	</div>
+
+
+
+	
+	<div id="page">
+		<span><a href="">首页</a></span>
+		<span><a href="">上一页</a></span>
+		<span><a href="">1</a></span>
+		<span><a href="">2</a></span>
+		<span><a href="">3</a></span>
+		<span><a href="">下一页</a></span>
+		<span><a href="">尾页</a></span>
+	</div>
+</div>
+
+
+<div class="footlt">
+	<div class="foot-content clearfix">
+		<div class="ft-list">
+			<dl>
+                <dt>产品服务</dt>
+                <dd><a target="_blank" href="">骑士人才系统</a></dd>
+                <dd><a target="_blank" href="">骑士猎头系统</a></dd>
+                <dd><a target="_blank" href="">定制开发</a></dd>
+                <dd><a target="_blank" href="">短信平台</a></dd>
+            </dl>
+            <dl>
+                <dt>关于我们</dt>
+                <dd><a target="_blank" href="">公司介绍</a></dd>
+                <dd><a target="_blank" href="">精英团队</a></dd>
+                <dd><a target="_blank" href="">发展历程</a></dd>
+                <dd><a target="_blank" target="_blank" href="">招贤纳士</a></dd>
+            </dl>
+            <dl>
+                <dt>免费技术支持</dt>
+                <dd><a target="_blank" href="">电话：{#$QISHI.bootom_tel#}</a></dd>
+                <dd><a target="_blank" href="">邮箱：service@74cms.com</a></dd>
+                <dd><wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button></dd>
+            </dl>
+            <dl>
+                <dt>商务合作</dt>
+                <dd><a target="_blank" href="">电子邮箱：bd@74cms.com</a></dd>
+                <dd><a target="_blank" href="">QQ：40068549</a></dd>
+                <dd><a target="_blank" href="">公司地址：山西晋中榆次安宁壹号-711室</a>
+                <dd><a target="_blank" href="">联系邮编：030600</a></dd></dd>
+            </dl>
+            <dl class="last">
+                <dt style="text-align:center">官方微信</dt>
+                <dd><img title="官方微信" src="images/wx.jpg"></dd>
+            </dl>
+		</div>
+	</div>
+</div>
+<div class="footer-menu">
+    <div class="footer-ct">
+        <div class="menu-inner">
+            <div class="copy-info">
+                <p>&copy; {#$QISHI.icp#} {#$QISHI.statistics#}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="renderer" content="webkit" /> 
+	<title>关于-公司</title>
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/about.css" />
+	<script src="js/jquery.js"></script>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="header">
+	<div class="clearfix" id="nav-wrapper">
+		<div style="width:100%;max-width:980px;height:76px;margin:auto">
+			<div id="logo">
+				<a href="{#$QISHI.site_dir#}"><img src="images/logo.gif" alt="{#$QISHI.site_name#}" /></a>
+			</div>
+			<div id="nav">
+				<ul class="clearfix">
+					<li><a class="home" href="{#$QISHI.site_dir#}">首页</a></li>
+					<li class="more">
+						<a class="tabs" href="javascript:void(0);">产品<span class="arrow"></span></a>
+						<div id="nav-sub-Productcenter" class="sub-nav" style="display: none;">
+							<dl class="clearfix">
+								<div class="dds clearfix">
+									<a href="">骑士猎头系统</a>
+									<a href="">定制与开发</a>	
+									<a href="">产品动态</a>
+									<a href="">业内评测</a>
+									<a href="">客户案例</a>
+								</div>
+							</dl>
+						</div>
+					</li>
+					<li><a class="tabs" href="{#$QISHI.site_dir#}/jobs">新闻</a></li>
+					<li><a class="tabs" href="javascript:void(0);">关于</a></li>
+					<li><a class="tabs" href="javascript:void(0);">案例</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	(function($){
+		var timer;
+		$.fn.mapNav = function(options) {
+			var opts = $.extend({},$.fn.mapNav.defaults,options);
+				$('.more').hover(function(event){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").css("display","block").animate({opacity:1},200);
+				},function(){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").animate({opacity:0},200).css("display","none");
+				}
+			);
+		};
+		$.fn.mapNav.defaults = {};
+	})(jQuery)
+	$('#nav').mapNav();
+	var nav_li = $("#nav ul>li");
+	var current_page = null;
+	var nav_blur_action = function(me){
+	        me.addClass("nav_selected_li");
+	        me.find(">a").addClass("nav_selected_a");
+	        me.find(">a .arrow").addClass("nav_selected_arrow");
+	    };
+
+	    var nav_fadeout_action = function(){
+	        nav_li.removeClass("nav_selected_li");
+	        nav_li.find(">a").removeClass("nav_selected_a");
+	        nav_li.find(">a .arrow").removeClass("nav_selected_arrow");
+	    };
+
+	var nav_hover = function(){
+	    nav_li.hover(function(){
+	            var me = $(this);
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	            nav_blur_action(me);
+	        },function(){
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	    });
+	};
+	nav_hover();
+</script>
+
+<!-- banner -->
+<div id="team">
+	<div class="team_box" style="background:url(./images/company_banner.jpg) no-repeat top center #0f51b2;"></div>
+</div>
+<!-- banner end -->
+
+<div class="company_box">
+	<p>
+		太原迅易科技发展有限公司成立于2009年，是一家主营网络软件开发、销售及服务等业务的高新技术企业，拥有互联网著名品牌“骑士人才系统”。公司的网站http://www.74cms.com/和技术论坛(http://www.74cms.com/bbs/)是目前国内极具影响力的服务型网站和论坛。
+	</p>
+	<div><img src="./images/company_img.jpg" alt="" /></div>
+	<p>
+		公司拥有一流的软件产品设计和开发团队，具有丰富的网络应用软件设计开发经验，专注于研发具有自主核心技术和知识产权的软件产品，尤其在网络人才招聘网站管理系统开发及相关领域，经过长期创新，开发出基于PHP+MYSQL为核心的一套免费 + 开源专业人才系统。软件具执行效率高、模板自由切换、后台管理功能灵活等诸多优秀特点。骑士人才系统除了招聘信息，微招聘，求职信息，HR工具箱，黄页，招聘会，新闻资讯，会员中心，培训信息和猎头等基本模块，随着公司的不断深入发展，骑士始终秉承时代要求，坚持科技创新，不断吐故纳新。2013年7月15日，公司成功研发出新型客户跟踪管理平台——客户关系管理系统，帮助广大用户将繁杂的客户关系打理的井井有条，从而在电子商务时代求胜；2013年7月15日， 手机安卓客户端成功发布。这些功能都树立了骑士系统 ‘人无我有，人有我优的’新的里程碑。特别是安卓手机客户端的发布，真正实现了‘一机在手，前程无忧’。
+	</p>
+	<p>
+		目前已有超过数20000多个网站的应用规模，并拥有3571名商业用户，涉及到国内政府、企业、科研教育和媒体等各个行业领域。中国台湾，中国香港，欧洲及东南亚地区，都有骑士的忠实用户。拥有国内近百分之70的市场份额，牢牢占据行业第1的席位。
+	</p>
+	<p>
+		随着人才系统的稳步发展，公司不断开发新的产品，朝着多元化方向发展。除人才系统外，太原迅易科技有限公司将推出诸如客户关系管理系统这样的销售软件，从人才招聘网站这个行业扩展到各行各业。在不久的将来，公司的愿景，是打造中国第一家上市的专业外包公司。
+	</p>
+	<div><img src="./images/company_img.jpg" alt="" /></div>
+	<p>
+		       公司以“创新，敬业，专业、专注”为核心理念，致力为用户提供最优秀的网站建设和网络招聘平台解决方案及相关咨询、培训和实施服务。公司视服务为企业生命，视客户为企业之本，以服务客户为企业宗旨，努力提升服务水平，以优秀服务为客户节约成本、创造价值，赢得了广大用户的信赖与支持。相信，在骑士全体员工的努力下，骑士会给您带来更好的体验。
+	</p>
+	<div class="company_bottom">
+		公司地址：山西晋中榆次安宁壹号0711室 <br />
+		联系电话：0354-3994557 0354-3237474
+	</div>
+</div>
+
+
+<div class="footlt">
+	<div class="foot-content clearfix">
+		<div class="ft-list">
+			<dl>
+                <dt>产品服务</dt>
+                <dd><a target="_blank" href="">骑士人才系统</a></dd>
+                <dd><a target="_blank" href="">骑士猎头系统</a></dd>
+                <dd><a target="_blank" href="">定制开发</a></dd>
+                <dd><a target="_blank" href="">短信平台</a></dd>
+            </dl>
+            <dl>
+                <dt>关于我们</dt>
+                <dd><a target="_blank" href="">公司介绍</a></dd>
+                <dd><a target="_blank" href="">精英团队</a></dd>
+                <dd><a target="_blank" href="">发展历程</a></dd>
+                <dd><a target="_blank" target="_blank" href="">招贤纳士</a></dd>
+            </dl>
+            <dl>
+                <dt>免费技术支持</dt>
+                <dd><a target="_blank" href="">电话：{#$QISHI.bootom_tel#}</a></dd>
+                <dd><a target="_blank" href="">邮箱：service@74cms.com</a></dd>
+                <dd><wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button></dd>
+            </dl>
+            <dl>
+                <dt>商务合作</dt>
+                <dd><a target="_blank" href="">电子邮箱：bd@74cms.com</a></dd>
+                <dd><a target="_blank" href="">QQ：40068549</a></dd>
+                <dd><a target="_blank" href="">公司地址：山西晋中榆次安宁壹号-711室</a>
+                <dd><a target="_blank" href="">联系邮编：030600</a></dd></dd>
+            </dl>
+            <dl class="last">
+                <dt style="text-align:center">官方微信</dt>
+                <dd><img title="官方微信" src="images/wx.jpg"></dd>
+            </dl>
+		</div>
+	</div>
+</div>
+<div class="footer-menu">
+    <div class="footer-ct">
+        <div class="menu-inner">
+            <div class="copy-info">
+                <p>&copy; {#$QISHI.icp#} {#$QISHI.statistics#}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$(".team_item:last").css({"border-bottom":0})
+	});
+</script>
+</body>
+</html>

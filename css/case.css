@@ -1,0 +1,10 @@
+/*客户案例*/
+.customr_case{width:980px;margin:0 auto;margin-top: 45px;}
+.customr_case .case_wrap{margin-top: 40px;padding:0 49px;}
+.customr_case .case_wrap .case_detail_item{padding:30px 0;border-bottom: 2px dashed #e2e2e2}
+.case_detail_item .case_logo{float: left;width:286px;height:150px;overflow: hidden;border:1px solid #e2e2e2;border-radius: 1px;}
+.case_detail_item .case_text{float: left;padding-left: 30px;width:564px;}
+.case_detail_item .case_text .case_name{font-size: 24px;color:#333;margin-bottom: 15px;}
+.case_detail_item .case_text .case_address{font-size: 14px;color:#999;}
+.case_detail_item .case_text .case_address:hover{text-decoration: none;color:#247FAF;}
+.case_detail_item .case_text .case_content{font-size: 12px;color:#666;font-family: "SimSun";line-height: 25px;margin-top: 20px;}

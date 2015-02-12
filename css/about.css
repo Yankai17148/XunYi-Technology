@@ -1,0 +1,62 @@
+#team{width:100%;height:300px;}
+#team .team_box{height:300px;overflow: hidden;}
+.team_content{width:880px;margin:0 auto;margin-top: 20px;}
+.team_content .team_item{padding:39px 0;border-bottom: 2px dashed #e2e2e2}
+.team_content .team_item .team_avater{float: left;width:140px;height:180px;border:1px solid #e2e2e2;overflow: hidden;margin-left: 70px;}
+.team_content .team_item .person_content{float: left;padding-left: 30px;width:573px;_width:560px;}
+.team_content .team_item .person_content .person_title{font-size: 22px;color:#333;margin-bottom: 15px;}
+.team_content .team_item .person_content p{font-size: 12px;color:#666;line-height: 25px;text-indent: 1em;}
+
+.company_box{width:880px;margin:0 auto;margin-top: 90px;}
+.company_box p{font-size: 12px;color:#666;line-height: 24px;text-indent: 2em;}
+.company_box div{margin:30px 0;text-align: center;}
+.company_box .company_bottom{text-align: right;font-size: 12px;color:#666;line-height: 24px;}
+
+.recruitment{width:980px;margin:0 auto;margin-top: 50px;}
+.recruitment .recruitment_left{float:left;width:570px;}
+.recruitment_left .job_item{width:530px;margin-bottom:20px;background-color: #fff;border:1px solid #d6d6d6;padding:20px;box-shadow: 1px 1px 7px #d6d6d6}
+.recruitment_left .job_item .job_name{font-size: 18px;color:#247FAF;margin-bottom: 12px;}
+.recruitment_left .job_item .job_content{font-size: 12px;color:#666;line-height: 25px;}
+.recruitment_left .job_item .job_content span{font-size: 14px;}
+.recruitment .recruitment_right{float: left;width:290px;padding-left: 120px;_overflow:hidden;_width:280px;}
+.recruitment .recruitment_right .join_us_content{font-size: 12px;color:#666;line-height: 25px;width:245px;}
+.recruitment .recruitment_right .join_us_content span{font-size: 20px;color:#247FAF;}
+.recruitment .recruitment_right .join_us_content div{line-height: 24px;margin-top: 5px;}
+.recruitment .recruitment_right .paper{width:305px;height:394px;margin-top:40px;background: url(../images/zhaopin_paper.png) no-repeat 0px 0px;}
+.recruitment .rec_title{font-size: 30px;color:#333;margin-bottom: 10px;}
+
+.contact_wrap{width:980px;margin:45px auto 70px auto;}
+.contact_wrap .contact_content{margin-top: 40px;}
+.contact_wrap .contact_content .contact_left{float: left;width:400px;}
+.contact_left .contact_top_text{font-size: 14px;color:#666;margin-bottom: 15px;}
+.contact_left .contact_top_text p{padding-bottom: 10px;}
+.contact_left h4{font-size: 14px;color:#666;line-height: 28px;}
+.contact_left .contact_tel div{margin:5px 0;font-size: 12px;color:#999;line-height: 18px;}
+.contact_left .contact_kefu h4{float: left;}
+.contact_left .contact_kefu .kefu_QQ{float: left;width:89px;height:28px;background: url(../images/qq_comment_small.png) no-repeat 0px 0px;}
+.contact_wrap .contact_content .contact_form{float: left;width:580px;}
+.contact_form h3{font-size: 14px;color:#666;}
+.contact_form input, .contact_form textarea{border:0;resize:none;overflow: auto;font-family: "SimSun"}
+.contact_form .contact_text_input{float: left;border:1px solid #d5d5d5;width:214px;height:14px;background-color: #fff;padding:7px;margin-top: 15px;margin-right: 10px;}
+.contact_form .contact_text_input input{font-size: 12px;color:#666;height:14px;line-height: 14px;width:214px;}
+.contact_textarea{width:454px;height:59px;border:1px solid #d5d5d5;margin-top: 15px;background-color: #fff;padding:7px;}
+.contact_textarea textarea{width:454px;height:59px;font-size: 12px;color:#666;}
+.contact_form .submit_btn{width:80px;height:32px;color:#FFF;margin-top:15px;float:right;margin-right:130px;background: #247FAF;font-size: 14px;font-family: "SimSun";border-radius: 3px;cursor: pointer;-webkit-transition: background-color .3s;
+-moz-transition: background-color .3s;
+-ms-transition: background-color .3s;
+-o-transition: background-color .3s;
+transition: background-color .3s;}
+.contact_form .submit_btn:hover{background-color: #196c97;}
+
+.histroy{width:980px;margin:0 auto;margin-top: 50px;}
+.histroy .histroy_left{float: left;width:470px;padding-left: 20px;}
+.histroy .histroy_left h1{font-size: 28px;color:#247FAF;margin-top: 25px;padding-left: 35px;background: url(../images/history_title_icon.gif) no-repeat 0px 6px;}
+.histroy .histroy_left p{width:260px;font-size: 14px;color:#333;line-height: 22px;margin-top: 25px;}
+.histroy .histroy_left .img_line{position: relative;width:410px;height:820px;background: url(../images/line_img.gif) no-repeat 0px 0px;}
+.histroy .histroy_left .img_line .img_line_item{position: absolute;width:150px;height:150px;border:3px solid #247FAF;border-radius: 50%;overflow: hidden;background-color: #fff;}
+.histroy .histroy_left .img_line .img_line_item img{border-radius: 50%;}
+.histroy .histroy_left .img_line .img_line_item.item1{top:50px;left:183px;}
+.histroy .histroy_left .img_line .img_line_item.item2{top:244px;left:0px;}
+.histroy .histroy_left .img_line .img_line_item.item3{top:420px;left:183px;}
+.histroy .histroy_left .img_line .img_line_item.item4{top:607px;left:0px;}
+.histroy .time_line{float: left;width:490px;height:1105px;background: url(../images/time_line.png) no-repeat 0px 0px;}

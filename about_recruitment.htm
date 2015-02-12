@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="renderer" content="webkit" /> 
+	<title>关于-招聘</title>
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/about.css" />
+	<script src="js/jquery.js"></script>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="header">
+	<div class="clearfix" id="nav-wrapper">
+		<div style="width:100%;max-width:980px;height:76px;margin:auto">
+			<div id="logo">
+				<a href="{#$QISHI.site_dir#}"><img src="images/logo.gif" alt="{#$QISHI.site_name#}" /></a>
+			</div>
+			<div id="nav">
+				<ul class="clearfix">
+					<li><a class="home" href="{#$QISHI.site_dir#}">首页</a></li>
+					<li class="more">
+						<a class="tabs" href="javascript:void(0);">产品<span class="arrow"></span></a>
+						<div id="nav-sub-Productcenter" class="sub-nav" style="display: none;">
+							<dl class="clearfix">
+								<div class="dds clearfix">
+									<a href="">骑士猎头系统</a>
+									<a href="">定制与开发</a>	
+									<a href="">产品动态</a>
+									<a href="">业内评测</a>
+									<a href="">客户案例</a>
+								</div>
+							</dl>
+						</div>
+					</li>
+					<li><a class="tabs" href="{#$QISHI.site_dir#}/jobs">新闻</a></li>
+					<li><a class="tabs" href="javascript:void(0);">关于</a></li>
+					<li><a class="tabs" href="javascript:void(0);">案例</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	(function($){
+		var timer;
+		$.fn.mapNav = function(options) {
+			var opts = $.extend({},$.fn.mapNav.defaults,options);
+				$('.more').hover(function(event){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").css("display","block").animate({opacity:1},200);
+				},function(){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").animate({opacity:0},200).css("display","none");
+				}
+			);
+		};
+		$.fn.mapNav.defaults = {};
+	})(jQuery)
+	$('#nav').mapNav();
+	var nav_li = $("#nav ul>li");
+	var current_page = null;
+	var nav_blur_action = function(me){
+	        me.addClass("nav_selected_li");
+	        me.find(">a").addClass("nav_selected_a");
+	        me.find(">a .arrow").addClass("nav_selected_arrow");
+	    };
+
+	    var nav_fadeout_action = function(){
+	        nav_li.removeClass("nav_selected_li");
+	        nav_li.find(">a").removeClass("nav_selected_a");
+	        nav_li.find(">a .arrow").removeClass("nav_selected_arrow");
+	    };
+
+	var nav_hover = function(){
+	    nav_li.hover(function(){
+	            var me = $(this);
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	            nav_blur_action(me);
+	        },function(){
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	    });
+	};
+	nav_hover();
+</script>
+
+<!-- banner -->
+<div id="team">
+	<div class="team_box" style="background:url(./images/zhaopin_banner.jpg) no-repeat top center;"></div>
+</div>
+<!-- banner end -->
+
+<div class="recruitment clearfix">
+	<div class="recruitment_left">
+		<h2 class="rec_title">正在招募</h2>
+		<div class="job_item">
+			<h3 class="job_name">产品策划</h3>
+			<div class="job_content">
+				<span>任职资格：</span><br />
+				1.非常熟悉互联网，熟悉网站建设流程；<br />
+				2.较强的文案撰写能力；<br />
+				3.思考和创新意识，喜欢头脑风暴；<br />
+				4.有较强的逻辑分析、归纳总结、触类旁通意识；<br />
+				<span>岗位职责: </span><br />
+				1.负责网站相关栏目/频道的信息搜集、编辑等工作；<br />
+				2.负责优化网站，提高用户体验；<br />
+				3.管理网站论坛及其活动，不断提升论坛活跃度，收集用户建议和BUG；<br />
+				4.协助完成频道管理与栏目的发展规划，促进网站知名度的提高；<br />
+				5.编写网站宣传推广内容及相关产品资料；
+			</div>
+		</div>
+		<div class="job_item">
+			<h3 class="job_name">前端工程师</h3>
+			<div class="job_content">
+				<span>任职资格：</span><br />
+				1.有过专业设计公司、互动广告公司、互联网公司的任职和实践经验；<br />
+				2.有非常好的平面美术功底和创新意识<br />
+				3.能设计精美的网站页面，并对细节有所苛求；<br />
+				4.对网站、互动设计有良好的理念和全面的认知，了解UI\UE以及交互设计的概念；<br />
+				5.能对Photoshop\Fireworks\ Flash等设计软件驾轻就熟；<br />
+				6.性格好，善于沟通与合作；<br />
+				7.对DHTML等前端技术实现有相当了解，有实现能力者优先；<br />
+				<span>岗位职责: </span><br />
+				1配合网站策划及开发人员，更新艺术创意，优化网站界面；<br />
+				2.参与公司产品设计策划，负责公司各种宣传资料的设计；<br />
+				3.设计Web应用程序及网站页面的整体布局，保证应用程序具有优质的视觉外观和良好的用户体验；
+			</div>
+		</div>
+		<div class="job_item">
+			<h3 class="job_name">PHP工程师</h3>
+			<div class="job_content">
+				<span>任职资格：</span><br />
+				1.精通 PHP+MySQL开发，有独立开发能力；<br />
+				2.拥有良好的代码、文件组织习惯，要求结构清晰，命名规范，逻辑性强，代码冗余率低； <br />
+				3.具有扎实的HTML、CSS、JavaScript基础；<br />
+				4.具有优秀的团队合作和沟通协作能力，积极上进，理解能力和接受能力好，能承受较大工作压力；<br />
+				<span>岗位职责: </span><br />
+				1负责互联网在线产品的设计，开发及改进；<br />
+				2.参与系统的需求分析、设计、评审、编码等开发和运营工作。确保相关系统稳定可靠运行；<br />
+				3.精通Smarty模版引擎，熟悉面向对象编程，具有PHP缓存技术使用、静态化设计方面的经验；
+			</div>
+		</div>
+	</div>
+	<div class="recruitment_right">
+		<h2 class="rec_title">加入我们</h2>
+		<div class="join_us_content">
+			<span>这</span>是一个瞬息变幻如梦飘渺的行业<br />
+			<span>这</span>是一个冒险创新踏实前行的企业<br />
+			<span>如</span>果你年轻，如果你有好奇心<br />
+			<div>
+				那就来享受刺激<br />
+				让我们一起为时代探路<br />
+				你以为你只是技术码农，我们当你是前锋。<br />
+				别人说你是新闻民工，我们说你时代枭龙。<br />
+				是金子，在哪儿都会发光。知微能做的，只是不掩盖你的光芒。<br />
+				我们尊重激情和梦想，我们信仰年轻和拼搏，知微有爱，欢迎你来！<br />
+				用数据挖掘知识和真相，用媒介提升公义和民智，知微有志，与君共驰！
+			</div>
+		</div>
+		<div class="paper">
+			
+		</div>
+	</div>
+</div>
+
+
+
+<div class="footlt">
+	<div class="foot-content clearfix">
+		<div class="ft-list">
+			<dl>
+                <dt>产品服务</dt>
+                <dd><a target="_blank" href="">骑士人才系统</a></dd>
+                <dd><a target="_blank" href="">骑士猎头系统</a></dd>
+                <dd><a target="_blank" href="">定制开发</a></dd>
+                <dd><a target="_blank" href="">短信平台</a></dd>
+            </dl>
+            <dl>
+                <dt>关于我们</dt>
+                <dd><a target="_blank" href="">公司介绍</a></dd>
+                <dd><a target="_blank" href="">精英团队</a></dd>
+                <dd><a target="_blank" href="">发展历程</a></dd>
+                <dd><a target="_blank" target="_blank" href="">招贤纳士</a></dd>
+            </dl>
+            <dl>
+                <dt>免费技术支持</dt>
+                <dd><a target="_blank" href="">电话：{#$QISHI.bootom_tel#}</a></dd>
+                <dd><a target="_blank" href="">邮箱：service@74cms.com</a></dd>
+                <dd><wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button></dd>
+            </dl>
+            <dl>
+                <dt>商务合作</dt>
+                <dd><a target="_blank" href="">电子邮箱：bd@74cms.com</a></dd>
+                <dd><a target="_blank" href="">QQ：40068549</a></dd>
+                <dd><a target="_blank" href="">公司地址：山西晋中榆次安宁壹号-711室</a>
+                <dd><a target="_blank" href="">联系邮编：030600</a></dd></dd>
+            </dl>
+            <dl class="last">
+                <dt style="text-align:center">官方微信</dt>
+                <dd><img title="官方微信" src="images/wx.jpg"></dd>
+            </dl>
+		</div>
+	</div>
+</div>
+<div class="footer-menu">
+    <div class="footer-ct">
+        <div class="menu-inner">
+            <div class="copy-info">
+                <p>&copy; {#$QISHI.icp#} {#$QISHI.statistics#}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$(".team_item:last").css({"border-bottom":0})
+	});
+</script>
+</body>
+</html>

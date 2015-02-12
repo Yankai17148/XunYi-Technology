@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="renderer" content="webkit" /> 
+	<title>新闻列表</title>
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/news.css" />
+	<script src="js/jquery.js"></script>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="header">
+	<div class="clearfix" id="nav-wrapper">
+		<div style="width:100%;max-width:980px;height:76px;margin:auto">
+			<div id="logo">
+				<a href="{#$QISHI.site_dir#}"><img src="images/logo.gif" alt="{#$QISHI.site_name#}" /></a>
+			</div>
+			<div id="nav">
+				<ul class="clearfix">
+					<li><a class="home" href="{#$QISHI.site_dir#}">首页</a></li>
+					<li class="more">
+						<a class="tabs" href="javascript:void(0);">产品<span class="arrow"></span></a>
+						<div id="nav-sub-Productcenter" class="sub-nav" style="display: none;">
+							<dl class="clearfix">
+								<div class="dds clearfix">
+									<a href="">骑士猎头系统</a>
+									<a href="">定制与开发</a>	
+									<a href="">产品动态</a>
+									<a href="">业内评测</a>
+									<a href="">客户案例</a>
+								</div>
+							</dl>
+						</div>
+					</li>
+					<li><a class="tabs" href="{#$QISHI.site_dir#}/jobs">新闻</a></li>
+					<li><a class="tabs" href="javascript:void(0);">关于</a></li>
+					<li><a class="tabs" href="javascript:void(0);">案例</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	(function($){
+		var timer;
+		$.fn.mapNav = function(options) {
+			var opts = $.extend({},$.fn.mapNav.defaults,options);
+				$('.more').hover(function(event){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").css("display","block").animate({opacity:1},200);
+				},function(){
+					$(this).find(".sub-nav").stop(true,true);
+					$(this).find(".sub-nav").animate({opacity:0},200).css("display","none");
+				}
+			);
+		};
+		$.fn.mapNav.defaults = {};
+	})(jQuery)
+	$('#nav').mapNav();
+	var nav_li = $("#nav ul>li");
+	var current_page = null;
+	var nav_blur_action = function(me){
+	        me.addClass("nav_selected_li");
+	        me.find(">a").addClass("nav_selected_a");
+	        me.find(">a .arrow").addClass("nav_selected_arrow");
+	    };
+
+	    var nav_fadeout_action = function(){
+	        nav_li.removeClass("nav_selected_li");
+	        nav_li.find(">a").removeClass("nav_selected_a");
+	        nav_li.find(">a .arrow").removeClass("nav_selected_arrow");
+	    };
+
+	var nav_hover = function(){
+	    nav_li.hover(function(){
+	            var me = $(this);
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	            nav_blur_action(me);
+	        },function(){
+	            nav_fadeout_action();
+	            if(current_page != null)
+	                current_page.find(">a").css({"color":"#0098dd"});
+	    });
+	};
+	nav_hover();
+</script>
+
+<!-- banner -->
+<div id="banner">
+	<div class="banner_box"></div>
+</div>
+<!-- banner end -->
+
+<div id="news_wrap">
+	<div class="news_list">
+		<div class="news_item">
+			<div class="news_date hot_news">
+				<h4>12,20</h4>
+				<div>2014</div>
+				<p>08:25:43</p>
+			</div>
+			<div class="news_content">
+				<h3><a href="">热烈庆祝骑士猎头开始公测！</a><img src="./images/p_hot.gif" alt="" /></h3>
+				<p>
+					社交分享是App的必备功能，使得App成为一个非封闭式、非集中的、可以和任何人交流的工具。 超过80%的游戏玩家有强烈的社交需求，就目前来看，大家对游戏内的社交分享还不够重视。游戏玩家的年龄在19-30岁之间居多，90后玩家活跃最高，这批年轻的一代平均……
+				</p>
+			</div>
+		</div>
+		<div class="news_item">
+			<div class="news_date hot_news">
+				<h4>12,20</h4>
+				<div>2014</div>
+				<p>08:25:43</p>
+			</div>
+			<div class="news_content">
+				<h3><a href="">热烈庆祝骑士猎头开始公测！</a><img src="./images/p_hot.gif" alt="" /></h3>
+				<p>
+					社交分享是App的必备功能，使得App成为一个非封闭式、非集中的、可以和任何人交流的工具。 超过80%的游戏玩家有强烈的社交需求，就目前来看，大家对游戏内的社交分享还不够重视。游戏玩家的年龄在19-30岁之间居多，90后玩家活跃最高，这批年轻的一代平均……
+				</p>
+			</div>
+		</div>
+		<div class="news_item">
+			<div class="news_date hot_news">
+				<h4>12,20</h4>
+				<div>2014</div>
+				<p>08:25:43</p>
+			</div>
+			<div class="news_content">
+				<h3><a href="">热烈庆祝骑士猎头开始公测！</a><img src="./images/p_hot.gif" alt="" /></h3>
+				<p>
+					社交分享是App的必备功能，使得App成为一个非封闭式、非集中的、可以和任何人交流的工具。 超过80%的游戏玩家有强烈的社交需求，就目前来看，大家对游戏内的社交分享还不够重视。游戏玩家的年龄在19-30岁之间居多，90后玩家活跃最高，这批年轻的一代平均……
+				</p>
+			</div>
+		</div>
+		<div class="news_item">
+			<div class="news_date">
+				<h4>12,20</h4>
+				<div>2014</div>
+				<p>08:25:43</p>
+			</div>
+			<div class="news_content">
+				<h3><a href="">热烈庆祝骑士猎头开始公测！</a></h3>
+				<p>
+					社交分享是App的必备功能，使得App成为一个非封闭式、非集中的、可以和任何人交流的工具。 超过80%的游戏玩家有强烈的社交需求，就目前来看，大家对游戏内的社交分享还不够重视。游戏玩家的年龄在19-30岁之间居多，90后玩家活跃最高，这批年轻的一代平均……
+				</p>
+			</div>
+		</div>
+		<div class="news_item">
+			<div class="news_date">
+				<h4>12,20</h4>
+				<div>2014</div>
+				<p>08:25:43</p>
+			</div>
+			<div class="news_content">
+				<h3><a href="">热烈庆祝骑士猎头开始公测！</a></h3>
+				<p>
+					社交分享是App的必备功能，使得App成为一个非封闭式、非集中的、可以和任何人交流的工具。 超过80%的游戏玩家有强烈的社交需求，就目前来看，大家对游戏内的社交分享还不够重视。游戏玩家的年龄在19-30岁之间居多，90后玩家活跃最高，这批年轻的一代平均……
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="page">
+		<span><a href="">首页</a></span>
+		<span><a href="">上一页</a></span>
+		<span><a href="">1</a></span>
+		<span><a href="">2</a></span>
+		<span><a href="">3</a></span>
+		<span><a href="">下一页</a></span>
+		<span><a href="">尾页</a></span>
+	</div>
+</div>
+
+
+<div class="footlt">
+	<div class="foot-content clearfix">
+		<div class="ft-list">
+			<dl>
+                <dt>产品服务</dt>
+                <dd><a target="_blank" href="">骑士人才系统</a></dd>
+                <dd><a target="_blank" href="">骑士猎头系统</a></dd>
+                <dd><a target="_blank" href="">定制开发</a></dd>
+                <dd><a target="_blank" href="">短信平台</a></dd>
+            </dl>
+            <dl>
+                <dt>关于我们</dt>
+                <dd><a target="_blank" href="">公司介绍</a></dd>
+                <dd><a target="_blank" href="">精英团队</a></dd>
+                <dd><a target="_blank" href="">发展历程</a></dd>
+                <dd><a target="_blank" target="_blank" href="">招贤纳士</a></dd>
+            </dl>
+            <dl>
+                <dt>免费技术支持</dt>
+                <dd><a target="_blank" href="">电话：{#$QISHI.bootom_tel#}</a></dd>
+                <dd><a target="_blank" href="">邮箱：service@74cms.com</a></dd>
+                <dd><wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button></dd>
+            </dl>
+            <dl>
+                <dt>商务合作</dt>
+                <dd><a target="_blank" href="">电子邮箱：bd@74cms.com</a></dd>
+                <dd><a target="_blank" href="">QQ：40068549</a></dd>
+                <dd><a target="_blank" href="">公司地址：山西晋中榆次安宁壹号-711室</a>
+                <dd><a target="_blank" href="">联系邮编：030600</a></dd></dd>
+            </dl>
+            <dl class="last">
+                <dt style="text-align:center">官方微信</dt>
+                <dd><img title="官方微信" src="images/wx.jpg"></dd>
+            </dl>
+		</div>
+	</div>
+</div>
+<div class="footer-menu">
+    <div class="footer-ct">
+        <div class="menu-inner">
+            <div class="copy-info">
+                <p>&copy; {#$QISHI.icp#} {#$QISHI.statistics#}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$(".news_content:last").css({
+			"border-bottom-style":"dashed",
+			"border-bottom-color":"#d6d6d6",
+			"border-bottom-width":2
+		});
+	});
+</script>
+</body>
+</html>
